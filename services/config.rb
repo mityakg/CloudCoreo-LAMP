@@ -15,11 +15,11 @@ coreo_aws_vpc_subnet "${PRIVATE_SUBNET_NAME}" do
   vpc "${VPC_NAME}"
 end
 
-coreo_aws_vpc_vpc "${VPC_NAME}" do
-  action :sustain
-  cidr "12.0.0.0/16"
-  internet_gateway true
-end
+#coreo_aws_vpc_vpc "${VPC_NAME}" do
+#  action :sustain
+#  cidr "12.0.0.0/16"
+# internet_gateway true
+#end
 
 coreo_aws_iam_policy "${LAMP_NAME}-route53" do
   action :sustain
