@@ -1,0 +1,5 @@
+script-order:
+  - install_apache.sh
+  - install_mysql.sh
+  - install_php.sh
+  - start_servers.sh
