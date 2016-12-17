@@ -48,6 +48,12 @@ variables:
     overrides:
     required: true
     type:
+  REGION:
+    default:
+    description:
+    overrides:
+    required: true
+    type:
   ENV:
     default: dev
     description: just a way to namespace the backups
