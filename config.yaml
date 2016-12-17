@@ -3,3 +3,52 @@ variables:
     default:
       - 80
       - 8080
+  VPC_NAME:
+    default:
+    description:
+    overrides:
+    required: true
+    type:
+  BACKUP_BUCKET:
+    default:
+    description:
+    overrides:
+    required: true
+    type:
+  YUM_REPO_BUCKET:
+    default:
+    description:
+    overrides:
+    required: true
+    type:
+  BACKUP_BUCKET_REGION:
+    default:
+    description:
+    overrides:
+    required: true
+    type:
+  LAMP_BACKUP_CRON:
+    default: "0 * * * *"
+    description: default to backing up every hour on the hour
+    overrides:
+    required: true
+    type:
+  LAMP_NAME:
+    default: lamp
+    description: the name of the LAMP server
+    required: true
+  LAMP_AMI:
+    default: ami-76817c1e
+    description: Amazon Linux AMI 2014.03.2 (HVM)
+    overrides:
+    required: true
+  PRIVATE_SUBNET_NAME:
+    default:
+    description:
+    overrides:
+    required: true
+    type:
+  ENV:
+    default: dev
+    description: just a way to namespace the backups
+    required: true
