@@ -39,7 +39,6 @@ coreo_aws_iam_policy "${LAMP_NAME}-route53" do
   EOH
 end
 
-
 coreo_aws_iam_policy "${LAMP_NAME}-s3" do
   action :sustain
   policy_name "AllowLampS3Backup"
@@ -79,11 +78,11 @@ coreo_aws_iam_policy "${LAMP_NAME}-s3" do
 EOH
 end
 
-coreo_aws_vpc_routetable "${LAMP_NAME}-routetable" do
-  action :sustain
-  vpc "${VPC_NAME}"
-  number_of_tables 3
-end
+#coreo_aws_vpc_routetable "${LAMP_NAME}-routetable" do
+#  action :sustain
+#  vpc "${VPC_NAME}"
+#  number_of_tables 3
+#end
 
 coreo_aws_vpc_subnet "${PRIVATE_SUBNET_NAME}" do
   action :sustain
