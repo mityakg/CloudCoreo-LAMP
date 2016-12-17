@@ -63,7 +63,7 @@ EOH
 end
 
 coreo_aws_vpc_routetable "${LAMP_NAME}-routetable" do
-  action :sustain
+  action :find
   vpc "${VPC_NAME}"
   number_of_tables 3
 end
