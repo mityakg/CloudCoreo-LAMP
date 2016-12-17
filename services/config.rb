@@ -9,11 +9,11 @@ coreo_aws_vpc_routetable "${LAMP_NAME}-routetable" do
   vpc "${VPC_NAME}"
 end
 
-coreo_aws_vpc_subnet "${PRIVATE_SUBNET_NAME}" do
-  action :find
-  route_table "${PUBLIC_ROUTE_NAME}"
-  vpc "${VPC_NAME}"
-end
+#coreo_aws_vpc_subnet "${PRIVATE_SUBNET_NAME}" do
+#  action :find
+#  route_table "${PUBLIC_ROUTE_NAME}"
+# vpc "${VPC_NAME}"
+#end
 
 #coreo_aws_vpc_vpc "${VPC_NAME}" do
 #  action :sustain
