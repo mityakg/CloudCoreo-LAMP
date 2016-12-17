@@ -1,4 +1,21 @@
 coreo_aws_vpc_vpc "${VPC_NAME}" do
+  action :find
+  cidr "${VPC_CIDR}"
+  internet_gateway true
+end
+
+coreo_aws_vpc_routetable "${PUBLIC_ROUTE_NAME}" do
+  action :find
+  vpc "${VPC_NAME}"
+end
+
+coreo_aws_vpc_subnet "${PUBLIC_SUBNET_NAME}" do
+  action :find
+  route_table "${PUBLIC_ROUTE_NAME}"
+  vpc "${VPC_NAME}"
+end
+
+coreo_aws_vpc_vpc "${VPC_NAME}" do
   action :sustain
   cidr "12.0.0.0/16"
   internet_gateway true
@@ -63,7 +80,7 @@ EOH
 end
 
 coreo_aws_vpc_routetable "${LAMP_NAME}-routetable" do
-  action :find
+  action :sustain
   vpc "${VPC_NAME}"
   number_of_tables 3
 end
